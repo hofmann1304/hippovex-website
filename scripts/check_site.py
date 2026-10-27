@@ -6,7 +6,7 @@ import json
 import xml.etree.ElementTree as ET
 
 ROOT = Path(__file__).resolve().parents[1]
-BASE = 'https://hofmann1304.github.io/hippovex-website/'
+BASE = 'https://hippovex.de/'
 ERRORS = []
 
 class Document(HTMLParser):

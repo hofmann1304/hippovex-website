@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://hofmann1304.github.io/hippovex-website/sitemap.xml
+Sitemap: https://hippovex.de/sitemap.xml
