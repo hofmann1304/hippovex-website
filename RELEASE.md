@@ -22,10 +22,19 @@ Stand: 27.10.2026.
 
 Die automatisierte Browserprüfung auf diesem Windows-Rechner wurde vom Computer-Use-Werkzeug gestoppt: `browser URL policy enforcement is not yet supported for the current Windows browser`. Die erste In-App-Browser-Anfrage lief zuvor in ein Zeitlimit. Deshalb wurden Desktop-/Mobilansicht und tatsächliche Maus-/Tastaturinteraktionen nicht visuell abgenommen. Responsive Regeln und Bedienlogik sind implementiert; eine bestandene visuelle Prüfung wird nicht behauptet.
 
-## Domain und Zertifikat
+## Domain und Zertifikat: erfolgreich verifiziert
 
-Die Betreiberin hat den Kauf von `hippovex.de` bei INWX bestätigt. Öffentlich verifiziert: NS `ns.inwx.de`, `ns2.inwx.de`, `ns3.inwx.eu`; der A-Eintrag zeigte beim letzten Abruf noch auf `185.181.104.242`. Über den autoritativen Nameserver waren keine Web-AAAA- oder www-CNAME-Antworten vorhanden. Die angemeldete INWX-Verwaltung konnte wegen der gestoppten Browserbedienung nicht eingesehen oder verändert werden.
+Abschlussprüfung am **27.10.2026 um 13:38 Uhr Europe/Berlin**:
 
-**Noch offen:** DNS-Ziele bei INWX ändern, Zertifikatsausstellung, Enforce HTTPS und Live-Prüfung der Custom Domain einschließlich www- und HTTP-Weiterleitungen. GitHub meldete direkt nach der Domainzuordnung `https_enforced: false`; die vorherige HTTPS-Prüfung der GitHub-Adresse bestätigt kein Zertifikat für `hippovex.de`.
+- INWX: Hauptdomain mit allen vier GitHub-A-Adressen; `www` als CNAME auf `hofmann1304.github.io`. Autoritativer Nameserver und öffentlicher Resolver bestätigten die Ziele.
+- GitHub Pages: `cname: hippovex.de`, `https_enforced: true`, Zertifikatsstatus `approved`. Hosting weiterhin `main`, `/`, Build-Typ `legacy` analog zu den beiden Referenzwebsites.
+- Gültiges Let's-Encrypt-Zertifikat für **hippovex.de und www.hippovex.de**, TLS 1.3 bei den Prüfverbindungen, Gültigkeitsende 25.01.2027. GitHub verwaltet das Zertifikat.
+- Elf HTTPS-URLs lieferten HTTP 200 und den erwarteten Quellinhalt: beide Sprach-Startseiten, vier Rechtstextseiten, CSS, JavaScript, robots.txt, sitemap.xml und Logo.
+- HTTP-Hauptdomain leitet auf HTTPS um; HTTPS-www leitet auf die Hauptdomain um. HTTP-www führt über die HTTP-Hauptdomain ebenfalls zur HTTPS-Hauptdomain. Sprachpfade bleiben erhalten.
+- Nicht vorhandene URL liefert HTTP 404 mit eigener Hippovex-Fehlerseite.
+- Geprüfter Website-Quellstand: `9548a97455eaf3d063710ffdf9ebc1b4b274b33f`; zugehöriger erfolgreicher Pages-Lauf [40497533831](https://github.com/hofmann1304/hippovex-website/actions/runs/40497533831).
+- Maschinenlesbarer Nachweis: [verification/live-check-2026-10-27.json](verification/live-check-2026-10-27.json). Wiederholbar mit `python scripts/check_live.py`.
 
-Die Betreiberin erhielt die fünf minimal erforderlichen Website-Einträge. Details, zusätzliche optionale IPv6-Einträge und Quellen stehen in `DNS.md`. Eine optionale GitHub-Konto-Domainverifikation per TXT wurde noch nicht durchgeführt.
+Nach der DNS-Umstellung war zunächst noch kein passendes Zertifikat verfügbar. Die Domain wurde entsprechend GitHubs dokumentiertem Verfahren einmal entfernt und wieder hinzugefügt. Daraufhin wurde das Zertifikat für beide Namen ausgestellt. Nach Aktivierung von Enforce HTTPS wurde die Website erneut bereitgestellt und die Weiterleitungskette geprüft. Alle beschriebenen technischen Abschlussprüfungen bestehen.
+
+Die optionale GitHub-Konto-Domainverifikation per TXT wurde nicht durchgeführt; sie ist von der erfolgreichen DNS-, TLS- und Live-Verifikation zu unterscheiden. Die visuelle Browserabnahme bleibt wegen der oben beschriebenen Werkzeuggrenze offen. Weder App-Produktionsreife noch eine rechtliche Abnahme werden aus diesen Website-Prüfungen abgeleitet.
