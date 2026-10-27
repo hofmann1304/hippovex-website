@@ -11,7 +11,7 @@ Analog zu `hofmann1304/sarahofmann-website` und `hofmann1304/robutrace-website`:
 - `.nojekyll` verhindert unnötige Jekyll-Verarbeitung.
 - Jeder Push auf `main` löst die GitHub-Pages-Veröffentlichung aus.
 - Registrar/DNS: **INWX**, laut Betreiberin am 27.10.2026 gekauft. Kein IONOS-Hosting.
-- Zieladresse: **https://hippovex.de/**, mit Weiterleitung von `www` und erzwungenem HTTPS nach Zertifikatsausstellung.
+- Live-Adresse: **https://hippovex.de/**. Custom Domain, Zertifikat für Hauptdomain und `www`, HTTPS-Erzwingung und Weiterleitungen wurden erfolgreich geprüft.
 - Die vorherige Projektadresse https://hofmann1304.github.io/hippovex-website/ wird nach der Domainzuordnung auf die Custom Domain umgeleitet. Solange DNS nicht umgestellt ist, ist dies keine unabhängig nutzbare Ersatzadresse.
 
 ## Lokal ansehen und prüfen
@@ -19,6 +19,7 @@ Analog zu `hofmann1304/sarahofmann-website` und `hofmann1304/robutrace-website`:
 ```powershell
 python -m http.server 8765 --bind 127.0.0.1
 python scripts/check_site.py
+python scripts/check_live.py
 node --check site.js
 git diff --check
 ```

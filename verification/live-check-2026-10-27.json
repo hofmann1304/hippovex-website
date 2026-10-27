@@ -1,0 +1,194 @@
+{
+  "checked_at_utc": "2026-10-27T11:38:24.001606+00:00",
+  "pages": [
+    {
+      "path": "",
+      "status": 200,
+      "url": "https://hippovex.de/",
+      "matches_source": true
+    },
+    {
+      "path": "en/",
+      "status": 200,
+      "url": "https://hippovex.de/en/",
+      "matches_source": true
+    },
+    {
+      "path": "impressum.html",
+      "status": 200,
+      "url": "https://hippovex.de/impressum.html",
+      "matches_source": true
+    },
+    {
+      "path": "datenschutz.html",
+      "status": 200,
+      "url": "https://hippovex.de/datenschutz.html",
+      "matches_source": true
+    },
+    {
+      "path": "en/impressum.html",
+      "status": 200,
+      "url": "https://hippovex.de/en/impressum.html",
+      "matches_source": true
+    },
+    {
+      "path": "en/datenschutz.html",
+      "status": 200,
+      "url": "https://hippovex.de/en/datenschutz.html",
+      "matches_source": true
+    },
+    {
+      "path": "styles.css",
+      "status": 200,
+      "url": "https://hippovex.de/styles.css",
+      "matches_source": true
+    },
+    {
+      "path": "site.js",
+      "status": 200,
+      "url": "https://hippovex.de/site.js",
+      "matches_source": true
+    },
+    {
+      "path": "robots.txt",
+      "status": 200,
+      "url": "https://hippovex.de/robots.txt",
+      "matches_source": true
+    },
+    {
+      "path": "sitemap.xml",
+      "status": 200,
+      "url": "https://hippovex.de/sitemap.xml",
+      "matches_source": true
+    },
+    {
+      "path": "assets/hippovex-logo.png",
+      "status": 200,
+      "url": "https://hippovex.de/assets/hippovex-logo.png",
+      "matches_source": true
+    }
+  ],
+  "tls": [
+    {
+      "host": "hippovex.de",
+      "valid": true,
+      "TLS": "TLSv1.3",
+      "SAN": [
+        [
+          "DNS",
+          "hippovex.de"
+        ],
+        [
+          "DNS",
+          "www.hippovex.de"
+        ]
+      ],
+      "notBefore": "Oct 27 10:37:08 2026 GMT",
+      "notAfter": "Jan 25 10:37:07 2027 GMT",
+      "issuer": [
+        [
+          [
+            "countryName",
+            "US"
+          ]
+        ],
+        [
+          [
+            "organizationName",
+            "Let's Encrypt"
+          ]
+        ],
+        [
+          [
+            "commonName",
+            "YR1"
+          ]
+        ]
+      ]
+    },
+    {
+      "host": "www.hippovex.de",
+      "valid": true,
+      "TLS": "TLSv1.3",
+      "SAN": [
+        [
+          "DNS",
+          "hippovex.de"
+        ],
+        [
+          "DNS",
+          "www.hippovex.de"
+        ]
+      ],
+      "notBefore": "Oct 27 10:37:08 2026 GMT",
+      "notAfter": "Jan 25 10:37:07 2027 GMT",
+      "issuer": [
+        [
+          [
+            "countryName",
+            "US"
+          ]
+        ],
+        [
+          [
+            "organizationName",
+            "Let's Encrypt"
+          ]
+        ],
+        [
+          [
+            "commonName",
+            "YR1"
+          ]
+        ]
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "url": "http://hippovex.de/",
+      "status": 301,
+      "location": "https://hippovex.de/",
+      "final_url": "https://hippovex.de/",
+      "final_status": 200,
+      "ok": true
+    },
+    {
+      "url": "http://www.hippovex.de/",
+      "status": 301,
+      "location": "http://hippovex.de/",
+      "final_url": "https://hippovex.de/",
+      "final_status": 200,
+      "ok": true
+    },
+    {
+      "url": "https://www.hippovex.de/",
+      "status": 301,
+      "location": "https://hippovex.de/",
+      "final_url": "https://hippovex.de/",
+      "final_status": 200,
+      "ok": true
+    },
+    {
+      "url": "http://hippovex.de/en/",
+      "status": 301,
+      "location": "https://hippovex.de/en/",
+      "final_url": "https://hippovex.de/en/",
+      "final_status": 200,
+      "ok": true
+    },
+    {
+      "url": "https://www.hippovex.de/en/",
+      "status": 301,
+      "location": "https://hippovex.de/en/",
+      "final_url": "https://hippovex.de/en/",
+      "final_status": 200,
+      "ok": true
+    }
+  ],
+  "404": {
+    "status": 404,
+    "custom_page": true
+  },
+  "passed": true
+}
