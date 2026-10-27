@@ -2,6 +2,8 @@
 
 Öffentliche Informationswebsite zur Hippovex-App in Entwicklung. Deutsche und englische Startseite, illustrative Produktansicht mit fiktiven Daten, Kontakt per E-Mail, Impressum, Datenschutz und eigene 404-Seite. Kein App-Download, keine Anmeldung, keine Käufe und kein Tracking.
 
+Gestaltung seit dem bestätigten Entwurf vom 27.10.2026: Kombination aus ruhiger Editorial-Gestaltung und heller Produktansicht. Warme Papierflächen, lokale Georgia-Serifenschrift, blaue Akzente, offene Funktionsabschnitte und eine Smartphone-Illustration mit den Ansichten „Heute“ und „Training“. Die Rechtstextseiten verwenden dieselbe Gestaltung; deren Inhalte bleiben erhalten.
+
 ## Architektur
 
 Analog zu `hofmann1304/sarahofmann-website` und `hofmann1304/robutrace-website`:

@@ -2,6 +2,16 @@
 
 Stand: 27.10.2026.
 
+## Bestätigtes Redesign: Editorial und produktnah
+
+Der in der Unterhaltung bestätigte kombinierte Entwurf ersetzt die dunkle Dashboard-Präsentation durch warme Papierflächen, Georgia-Überschriften, dezente blaue Akzente und eine helle Smartphone-Illustration. Deutsche und englische Startseite sowie die gemeinsamen Stile der vier Rechtstextseiten sind angepasst. Das vorhandene Hippovex-Logo bleibt erhalten. Die CSS-Adresse ist versioniert, damit Browser die neue Gestaltung laden.
+
+Die App-Illustration enthält fiktive Beispieldaten und wird als Illustration bezeichnet. Die Ansichten „Heute“ und „Training“ verwenden die vorhandene Tastaturbedienung. Die Gesamtplattform wird als Ziel benannt; Entwicklungsstand, Downloadstatus und fachliche Grenzen bleiben sichtbar. Quellen: aktuelle lokale Produktvision `docs/PRODUCT_VISION.md` und der bestätigte Designentwurf.
+
+Lokale Prüfungen: sieben HTML-Seiten, lokale Links und Sprungmarken, kanonische URLs und gegenseitige Sprachverweise, strukturierte Daten, Sitemap und Assets bestanden; JavaScript-Syntax und Git-Whitespace bestanden. Zusätzlich sind die HTML-Tags ausgeglichen und die Inhalte aller vier Rechtstextseiten gegenüber dem vorherigen Stand identisch. Die visuelle Browserabnahme bleibt wegen der unten dokumentierten Werkzeuggrenze unbestätigt.
+
+Veröffentlichung und abschließende Live-Ergebnisse dieses Redesigns: [Pull Request #4](https://github.com/hofmann1304/hippovex-website/pull/4). Die folgenden Abschnitte dokumentieren den ursprünglichen technischen Domainstart.
+
 ## GitHub-Veröffentlichung
 
 - Repository: https://github.com/hofmann1304/hippovex-website (öffentlich).
