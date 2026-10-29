@@ -11,7 +11,7 @@ for host in ['hippovex.de','www.hippovex.de']:
                 c=t.getpeercert()
                 report['tls'].append({'host':host,'valid':True,'TLS':t.version(),'SAN':c.get('subjectAltName'),'notBefore':c.get('notBefore'),'notAfter':c.get('notAfter'),'issuer':c.get('issuer')})
     except Exception as e: report['tls'].append({'host':host,'valid':False,'error':str(e)})
-for rel in ['','en/','impressum.html','datenschutz.html','en/impressum.html','en/datenschutz.html','styles.css','site.js','robots.txt','sitemap.xml','assets/hippovex-logo.png']:
+for rel in ['','en/','impressum.html','datenschutz.html','en/impressum.html','en/datenschutz.html','danke.html','en/danke.html','styles.css','site.js','contact.js','robots.txt','sitemap.xml','assets/hippovex-logo.png']:
     try:
         with urlopen('https://hippovex.de/'+rel,timeout=15) as r: data=r.read(); status=r.status; url=r.url
         local=(ROOT/(rel+'index.html' if rel in ['','en/'] else rel)).read_bytes()

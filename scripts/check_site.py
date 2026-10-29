@@ -14,8 +14,15 @@ class Document(HTMLParser):
         super().__init__(convert_charrefs=True)
         self.ids=set(); self.links=[]; self.canonical=[]; self.alternates={}; self.h1=0
         self.lang=None; self.description=False; self.jsons=[]; self.json_current=None; self.title=False
+        self.forms=[]; self.current_form=None; self.labels=set()
     def handle_starttag(self, tag, attrs):
         a=dict(attrs)
+        if tag=='label' and a.get('for'): self.labels.add(a['for'])
+        if tag=='form':
+            self.current_form={'attrs':a,'controls':{}}
+            self.forms.append(self.current_form)
+        if tag in ['input','select','textarea'] and self.current_form is not None:
+            self.current_form['controls'][a.get('name')]=a
         if 'id' in a:
             if a['id'] in self.ids: ERRORS.append('duplicate id '+a['id'])
             self.ids.add(a['id'])
@@ -32,6 +39,7 @@ class Document(HTMLParser):
     def handle_data(self,data):
         if self.json_current is not None: self.json_current+=data
     def handle_endtag(self,tag):
+        if tag=='form': self.current_form=None
         if tag=='script' and self.json_current is not None:
             self.jsons.append(json.loads(self.json_current)); self.json_current=None
 
@@ -72,8 +80,30 @@ for loc in tree.findall('.//{*}loc'):
     if not target.exists(): ERRORS.append('sitemap: '+loc.text)
 css=(ROOT/'styles.css').read_text(encoding='utf-8')
 if css.count('{')!=css.count('}'): ERRORS.append('CSS brace count')
-for file in ['.nojekyll','assets/hippovex-logo.png','site.js','robots.txt']:
+for rel in ['index.html','en/index.html']:
+    path=ROOT/rel; doc=docs[path.resolve()]; en=rel.startswith('en/')
+    if len(doc.forms)!=1:
+        ERRORS.append(rel+': expected one contact form'); continue
+    form=doc.forms[0]; controls=form['controls']; attrs=form['attrs']
+    if attrs.get('method','').lower()!='post' or attrs.get('action')!='https://form.taxi/s/3retq47d':
+        ERRORS.append(rel+': form delivery endpoint')
+    expected_next=BASE+('en/' if en else '')+'danke.html'
+    if controls.get('_next',{}).get('value')!=expected_next: ERRORS.append(rel+': confirmation URL')
+    if controls.get('_lang',{}).get('value')!=('en' if en else 'de'): ERRORS.append(rel+': form language')
+    email=controls.get('email',{})
+    if email.get('type')!='email' or 'required' not in email: ERRORS.append(rel+': required email')
+    for name in ['Name','Gerät','Nachricht']:
+        if name not in controls or 'required' in controls[name]: ERRORS.append(rel+': optional '+name)
+    for name,control in controls.items():
+        if control.get('type')!='hidden' and control.get('id') not in doc.labels:
+            ERRORS.append(rel+': missing control label '+str(name))
+    if controls.get('_gotcha',{}).get('tabindex')!='-1': ERRORS.append(rel+': honeypot keyboard access')
+    if not controls.get('_subject',{}).get('value','').startswith('Hippovex'): ERRORS.append(rel+': form subject')
+    if any(url.startswith('mailto:') for url in doc.links): ERRORS.append(rel+': marketing mailto link')
+    if 'Schreib Sara' in path.read_text(encoding='utf-8') or 'Email Sara' in path.read_text(encoding='utf-8'):
+        ERRORS.append(rel+': personal contact copy')
+for file in ['.nojekyll','assets/hippovex-logo.png','site.js','contact.js','robots.txt','danke.html','en/danke.html']:
     if not (ROOT/file).exists(): ERRORS.append('missing '+file)
 if ERRORS:
     print('\n'.join(ERRORS)); raise SystemExit(1)
-print(f'PASS: {len(docs)} HTML pages; local links/anchors, metadata, reciprocal languages, structured data, sitemap, CSS and assets.')
+print(f'PASS: {len(docs)} HTML pages; links, metadata, languages, structured data, sitemap, assets and bilingual contact form contracts.')
