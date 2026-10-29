@@ -1,6 +1,16 @@
 # Veröffentlichungsstatus
 
-Stand: 27.10.2026.
+Stand: 29.10.2026.
+
+## Beta- und Kontaktformular
+
+Auf ausdrücklichen Nutzerwunsch wurden persönliche Kontaktansprache und Marketing-Mailto-Aufrufe durch „Beta-Zugang anfragen“ und ein echtes Formular ersetzt, auf Deutsch und Englisch. Auswahlmöglichkeiten: Beta, Frage zum Projekt, Feedback und Kooperation. Name, Gerät und Nachricht sind optional. Das Formular öffnet kein E-Mail-Programm; die normale Übermittlung erfolgt mit Rückmeldung innerhalb der Seite. Native HTML-Übermittlung und zwei sprachlich passende Bestätigungsseiten dienen als Fallback ohne JavaScript.
+
+Der Form.taxi-Anschluss wurde aus dem verbundenen Repository `hofmann1304/sarahofmann-website`, Datei `kontakt.html`, übernommen. Form.taxi dokumentiert die Nutzung desselben Anschlusses von mehreren Domains; vorhandene kontospezifische Domainfreigaben können davon abweichen und waren über das Browserwerkzeug nicht einsehbar. Die bestehende Formularkonfiguration anderer Websites wurde nicht verändert. Der Anbieter wird in den Datenschutzhinweisen beider Sprachen genannt.
+
+Prüfungen: neun HTML-Seiten einschließlich Formularvertrag, Links und Metadaten; JavaScript-Syntax; neun isolierte Formular-Ablauftests für bestätigten Erfolg, Serverablehnung, ungültige Antwort, HTTP-/Netzwerkfehler, fehlende Pflichtangaben, Doppelsendungen, Zeitüberschreitung und englische Rückmeldung. Diese Tests erzeugen keine echten Nachrichten. Browserzugriff meldete am 29.10.2026 `Local browser use is disabled in Work settings`; visuelle Bedienprüfung und das Anbieterpanel waren damit nicht zugänglich. Die tatsächliche Postfachzustellung muss separat nachgewiesen werden und wird aus Quellcode- oder Live-Seitenprüfungen nicht behauptet.
+
+Veröffentlichung und abschließende Live-Ergebnisse: [Pull Request #5](https://github.com/hofmann1304/hippovex-website/pull/5). Die älteren Abschnitte dokumentieren die vorherigen Veröffentlichungen.
 
 ## Bestätigtes Redesign: Editorial und produktnah
 
